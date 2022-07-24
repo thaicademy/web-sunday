@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2022 at 05:00 AM
+-- Generation Time: Jul 24, 2022 at 07:56 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `somkiat`
+-- Database: `sunday`
 --
 
 -- --------------------------------------------------------
@@ -62,18 +62,16 @@ CREATE TABLE `users` (
   `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `firstname` varchar(50) COLLATE utf8_bin NOT NULL,
   `lastname` varchar(50) COLLATE utf8_bin NOT NULL,
-  `address` text COLLATE utf8_bin NOT NULL
+  `address` text COLLATE utf8_bin NOT NULL,
+  `filename` varchar(200) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `firstname`, `lastname`, `address`) VALUES
-(1, 'eleclabs', '1234', 'eleclabs@gmail.com', 'สมเกียรติ', 'ใจดี', 'กรุงเทพฯ'),
-(2, 'siamcodes', '12345678', 'abc@gmail.com', 'สมชาย', 'ใจกล้า', 'กรุงเทพฯ'),
-(3, 'thaicademy', '12345678', 'thaicademy@gmail.com', 'สมหญิง', 'ณ ดินแดง', 'สมุทรปราการ'),
-(4, 'eleciot', '123456789', 'eleciot@gmail.com', 'สมสมัย', 'ณ ดินแดง', 'สระบุรี');
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `firstname`, `lastname`, `address`, `filename`) VALUES
+(30, 'siamcodes', '1234', 'siamcodes@gmail.com', 'Somkiat', 'Jaidee', '                                                                                                                        dfgdfg                                                                                                    ', 'qrcode.png');
 
 --
 -- Indexes for dumped tables
@@ -117,7 +115,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

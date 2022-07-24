@@ -30,7 +30,7 @@
                         <?php echo $row['address']; ?>
                     </textarea>
                     แนบไฟล์รูปภาพ
-                    <input type="file" name="uploadfile" class="form-control" />
+                    <input type="file" name="uploadfile" class="form-control mb-2" />
                     <img src="./images/<?php echo $row['filename']; ?>" style="max-width:200px" />
                     <div class="pt-2 d-grid">
                         <input type="submit" value="แก้ไข" class="btn btn-primary" />
