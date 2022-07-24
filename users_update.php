@@ -14,23 +14,34 @@
 
   if(!empty($filename)){
     $sql = "UPDATE users SET username='$username', password='$password', firstname='$firstname', lastname='$lastname', email='$email', address='$address', filename='$filename' WHERE id='$id'";
+    if(mysqli_query($link, $sql)){
+      if (move_uploaded_file($tempname, $folder)) {
+        echo "<script>
+                alert('บันทึกไฟล์เรียบร้อย');
+                window.location.href='./users.php';
+             </script>";
+      } else {
+        echo "ไม่สามารถบันทึกไฟล์ได้";
+      }
+    } else {
+      echo "ผิดพลาด : " . mysqli_error($link);
+    }
+  
   }else{
     $sql = "UPDATE users SET username='$username', password='$password', firstname='$firstname', lastname='$lastname', email='$email', address='$address' WHERE id='$id'";
+    if(mysqli_query($link, $sql)){
+      echo "<script>
+            alert('บันทึกเรียบร้อย');
+            window.location.href='./users.php';
+         </script>";
+    } else {
+      echo "ผิดพลาด : " . mysqli_error($link);
+    }
+  
   }
 
-  if(mysqli_query($link, $sql)){
-    echo "Records were updated successfully.";
-    header("location: users.php");
-  } else {
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-  }
+  
 
-  if (move_uploaded_file($tempname, $folder)) {
-      echo "บันทึกไฟล์เรียบร้อย";
-  } else {
-      echo "ไม่สามารถบันทึกไฟล์";
-  }
- 
 mysqli_close($link);
 
 ?>
