@@ -26,21 +26,18 @@
     } else {
       echo "ผิดพลาด : " . mysqli_error($link);
     }
-  
   }else{
     $sql = "UPDATE users SET username='$username', password='$password', firstname='$firstname', lastname='$lastname', email='$email', address='$address' WHERE id='$id'";
     if(mysqli_query($link, $sql)){
       echo "<script>
-            alert('บันทึกเรียบร้อย');
-            window.location.href='./users.php';
-         </script>";
+              alert('บันทึกเรียบร้อย');
+              window.location.href='./users.php';
+            </script>";
     } else {
       echo "ผิดพลาด : " . mysqli_error($link);
     }
-  
-  }
 
-  
+  }
 
 mysqli_close($link);
 

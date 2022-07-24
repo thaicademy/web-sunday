@@ -33,7 +33,7 @@
             <td><?php echo "$row[email]"; ?></td>
             <td><?php echo "$row[address]"; ?></td>
             <td>
-                <a href="users_delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"> Delete </a>
+                <a href="users_delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onClick="javascript: return confirm('ยืนยันการลบ');"> Delete </a>
                 <a href="users_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-info"> Edit </a>
             </td>
         </tr>
