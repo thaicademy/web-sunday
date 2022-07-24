@@ -12,8 +12,12 @@
   $tempname = $_FILES["uploadfile"]["tmp_name"];
   $folder = "./images/" . $filename;
 
-  
-  $sql = "UPDATE users SET username='$username', password='$password', firstname='$firstname', lastname='$lastname', email='$email', address='$address', filename='$filename' WHERE id='$id'";
+  if(!empty($filename)){
+    $sql = "UPDATE users SET username='$username', password='$password', firstname='$firstname', lastname='$lastname', email='$email', address='$address', filename='$filename' WHERE id='$id'";
+  }else{
+    $sql = "UPDATE users SET username='$username', password='$password', firstname='$firstname', lastname='$lastname', email='$email', address='$address' WHERE id='$id'";
+  }
+
   if(mysqli_query($link, $sql)){
     echo "Records were updated successfully.";
     header("location: users.php");

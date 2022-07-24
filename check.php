@@ -5,7 +5,7 @@
   if(!empty($_POST['username']) && !empty($_POST['password']) ){
       $sql = "SELECT * FROM users WHERE 
             username='$_POST[username]'  && password ='$_POST[password]' ";
-      $result = mysqli_query($conn, $sql);
+      $result = mysqli_query($link, $sql);
       $row = mysqli_fetch_array($result);
 
       if($row['username'] == $_POST['username'] && $row[password] == $_POST['password']){

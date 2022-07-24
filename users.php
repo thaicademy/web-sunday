@@ -21,7 +21,7 @@
     while($row = mysqli_fetch_assoc($result)){
 ?>
         <tr>
-            <td> <img src="./images/<?php echo $row['filename'] ?>" class="img-fluid" /> </td>
+            <td> <img src="./images/<?php echo $row['filename'] ?>" class="img-fluid" style="max-width:200px" /> </td>
             <td><?php echo "$row[username]"; ?></td>
             <td><?php echo "$row[password]"; ?></td>
             <td>
